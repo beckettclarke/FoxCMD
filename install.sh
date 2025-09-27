@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # ╔═[ 📄 LICENSE ]════════════════════════════════════════════════╗
-# ║ This software is licensed under the Alofsto General Public    ║
+# ║ This software is licensed under the General Public            ║
 # ║ License. It can be viewed at https://bit.ly/agplraw.          ║
 # ╚═══════════════════════════════════════════════════════════════╝
 
@@ -57,8 +57,8 @@ if [ "$confirm" == "" ]; then
   fi
   echo -n -e "${color_blue}"
   progress 1 "⬇️  Downloading FoxCMD"
-  curl -fsSL "https://raw.githubusercontent.com/ItsFoxDev/FoxCMD/main/fox.sh" -o ~/.foxcmd/fox -#
-  curl -fsSL "https://raw.githubusercontent.com/ItsFoxDev/FoxCMD/main/cmd/install.sh" -o ~/.foxcmd/foxint-install -#
+  curl -fsSL "https://raw.githubusercontent.com/beckettclarke/FoxCMD/main/fox.sh" -o ~/.foxcmd/fox -#
+  curl -fsSL "https://raw.githubusercontent.com/beckettclarke/FoxCMD/main/cmd/install.sh" -o ~/.foxcmd/foxint-install -#
   progress 0.4 "📥 Installing FoxCMD"
   chmod 755 ~/.foxcmd/fox
   chmod 755 ~/.foxcmd/foxint-install
