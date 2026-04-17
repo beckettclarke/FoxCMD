@@ -87,13 +87,13 @@ if [ "$1" == "update" ]; then
   sleep $del
   echo -e "${color_blue}⬇️  Downloading FoxCMD"
   sleep $del
-  curl -fsSL "https://raw.githubusercontent.com/ItsFoxDev/FoxCMD/main/fox.sh" -o $foxpath/fox
-  curl -fsSL "https://raw.githubusercontent.com/ItsFoxDev/FoxCMD/main/cmd/install.sh" -o $foxpath/foxint-install
+  curl -fsSL "https://raw.githubusercontent.com/beckettclarke/FoxCMD/main/fox.sh" -o $foxpath/fox
+  curl -fsSL "https://raw.githubusercontent.com/beckettclarke/FoxCMD/main/cmd/install.sh" -o $foxpath/foxint-install
   echo -e "${color_blue}📥 Installing FoxCMD..."
   sleep $del
   chmod 755 $foxpath/fox
   chmod 755 $foxpath/foxint-install
-  echo -e "${color_green}✅ FoxCMD v2 is has been successfully updated!"
+  echo -e "${color_green}✅ FoxCMD has been successfully updated!"
   sleep $del
   cl=0
 fi
@@ -126,10 +126,12 @@ if [ "$1" == "starwars" ]; then
 fi
 
 if [ "$1" == "aiperson" ]; then
-  if [ $2q 0 ]; then
+  if [ -z "$2" ] || ! [[ "$2" =~ ^[0-9]+$ ]]; then
     echo -e "${color_red}❌ Please enter a valid number"
     sleep $del
     echo -e "Syntax: \"fox aiperson <number of people>\""
+    cl=0
+    exit 1
   fi
   echo -e ""
   echo -e "${color_blue}🏁 Setting things up..."
