@@ -68,6 +68,6 @@ if [ "$confirm" == "" ]; then
   echo -e "${color_blue}🏁 To run FoxCMD, restart your terminal, then run ${bold}\"fox\"${reset}"
 else
   echo ""
-  echo -e "{color_red}❌ Install was cancelled.${reset}"
+  echo -e "${color_red}❌ Install was cancelled.${reset}"
 fi
 echo -e ""

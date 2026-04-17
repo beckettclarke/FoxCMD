@@ -45,7 +45,7 @@ if [ "$1" == "package" ]; then
     if [ "$3" != "-s" ]; then
       echo "🌶 Installing spicetify..."
     fi
-    curl -fsSL https://raw.githubusercontent.com/khanhas/spicetify-cli/master/install.sh | sh
+    curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
     spicetify backup
     curl -fsSL https://raw.githubusercontent.com/CharlieS1103/spicetify-marketplace/main/install.sh | sh
   fi
@@ -95,7 +95,7 @@ if [ "$1" == "package" ]; then
   fi
   if [ "$2" == "python" ]; then
     if [ "$3" == "-s" ]; then
-      curl -s -L https://www.python.org/ftp/python/3.10.4/python-3.10.4-macos11.pkg -o ~/python.pkg
+      curl -s -L https://www.python.org/ftp/python/3.13.1/python-3.13.1-macos11.pkg -o ~/python.pkg
       sudo installer -pkg '~/python.pkg' -target /
       rm "~/python.pkg"
       sudo ln -s /usr/bin/python3 $foxpath/python
@@ -103,7 +103,7 @@ if [ "$1" == "package" ]; then
     else
       echo ""
       echo "⬇️  Downloading Python"
-      curl -L https://www.python.org/ftp/python/3.10.4/python-3.10.4-macos11.pkg -o ~/python.pkg -#
+      curl -L https://www.python.org/ftp/python/3.13.1/python-3.13.1-macos11.pkg -o ~/python.pkg -#
       echo "📥 Installing Python"
       sudo installer -pkg '~/python.pkg' -target /
       echo "🫧 Cleaning up"
@@ -141,21 +141,21 @@ if [ "$1" == "package" ]; then
       echo "It may not seem like it is doing anything, but it is."
       echo ""
       echo "📥 Downloading ffmpeg..."
-      curl "https://evermeet.cx/ffmpeg/ffmpeg-5.0.zip" -o $foxpath/ffmpeg.zip -#
+      curl "https://evermeet.cx/ffmpeg/getrelease/zip" -o $foxpath/ffmpeg.zip -#
       echo "📥 Installing ffmpeg..."
       unzip -o -q $foxpath/ffmpeg.zip -d $foxpath/
       echo "🚦 Verifying..."
       chmod +x $foxpath/ffmpeg
       echo ""
       echo "📥 Downloading dependency ffprobe..."
-      curl "https://evermeet.cx/ffmpeg/ffprobe-5.0.zip" -o $foxpath/ffprobe.zip -#
+      curl "https://evermeet.cx/ffmpeg/getrelease/ffprobe/zip" -o $foxpath/ffprobe.zip -#
       echo "📥 Installing ffprobe..."
       unzip -o -q $foxpath/ffprobe.zip -d $foxpath/
       echo "🚦 Verifying..."
       chmod +x $foxpath/ffprobe
       echo ""
       echo "📥 Downloading dependency ffplay..."
-      curl "https://evermeet.cx/ffmpeg/ffplay-5.0.zip" -o $foxpath/ffplay.zip -#
+      curl "https://evermeet.cx/ffmpeg/getrelease/ffplay/zip" -o $foxpath/ffplay.zip -#
       echo "📥 Installing ffplay..."
       unzip -o -q $foxpath/ffplay.zip -d $foxpath/
       echo "🚦 Verifying..."
@@ -171,13 +171,13 @@ if [ "$1" == "package" ]; then
   fi
   if [ "$2" == "npm" ] || [ "$2" == "nodejs" ]; then
     if [ "$3" == "-s" ]; then
-      curl -s -L https://nodejs.org/dist/v18.0.0/node-v18.0.0.pkg -o ~/nodejs.pkg
+      curl -s -L https://nodejs.org/dist/v22.12.0/node-v22.12.0.pkg -o ~/nodejs.pkg
       sudo installer -pkg '~/nodejs.pkg' -target /
       rm "~/nodejs.pkg"
     else
       echo ""
       echo "⬇️ Downloading NodeJS"
-      curl -L https://nodejs.org/dist/v18.0.0/node-v18.0.0.pkg -o ~/nodejs.pkg -#
+      curl -L https://nodejs.org/dist/v22.12.0/node-v22.12.0.pkg -o ~/nodejs.pkg -#
       echo "📥 Installing NodeJS"
       sudo installer -pkg '~/nodejs.pkg' -target /
       echo "🫧 Cleaning up"
